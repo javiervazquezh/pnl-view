@@ -1,0 +1,44 @@
+:root {
+  color-scheme: light dark;
+}
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  background: #ffffff;
+  color: #111827;
+}
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.app-header {
+  padding: 16px 20px;
+  background: #10a14b; /* TD Bank green */
+  color: #ffffff;
+}
+.logo-circle { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #ffffff; display: grid; place-items: center; margin-right: 10px; font-size: 18px; }
+.title { font-size: 20px; font-weight: 700; letter-spacing: 0.2px; color: #ffffff; }
+.subtitle { font-size: 12px; color: #e5f6ec; }
+.content { display: grid; grid-template-rows: 1fr auto; gap: 16px; padding: 16px; max-width: 1200px; width: 100%; margin: 0 auto; box-sizing: border-box; }
+.card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 12px 12px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
+.card-title { display: flex; align-items: center; gap: 8px; font-weight: 600; color: #111827; margin-bottom: 8px; }
+.card-body { background: #ffffff; border: 1px solid #f3f4f6; border-radius: 8px; padding: 8px; }
+.table-wrap { overflow: auto; border: 1px solid #e5e7eb; border-radius: 8px; }
+.grid { width: 100%; border-collapse: collapse; font-size: 13px; }
+.grid thead th { text-align: left; padding: 8px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; font-weight: 600; color: #374151; position: sticky; top: 0; }
+.grid tbody td { padding: 8px; border-bottom: 1px solid #f3f4f6; color: #111827; }
+.grid tbody tr:hover { background: #f9fafb; }
+.pos { color: #0b8f3a; }
+.neg { color: #b00020; }
+.flash-pos { animation: flashGreen 0.6s ease-in-out; }
+.flash-neg { animation: flashRed 0.6s ease-in-out; }
+@keyframes flashGreen {
+  0% { background-color: rgba(16, 161, 75, 0.25); }
+  100% { background-color: transparent; }
+}
+@keyframes flashRed {
+  0% { background-color: rgba(176, 0, 32, 0.20); }
+  100% { background-color: transparent; }
+}
+/* Ensure flash background is visible even with row hover */
+.grid tbody td.flash-pos, .grid tbody td.flash-neg { transition: background-color 0.4s ease; }
+.row { display: flex; gap: 8px; }
+h2, h3 { font-weight: 600; }
+table th, table td { font-weight: 400; }
